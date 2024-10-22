@@ -2,86 +2,92 @@
     "restaurants": [
       { 
         "id": "1", 
-        "name": "KFC", 
-        "image": "https://i.imgur.com/sZ1Jye3.png"
+        "name": "Coca Lata", 
+        "image": "https://imgur.com/vdKmBs7.jpgs",
+        "price": 8.5
       },
       { 
         "id": "2", 
-        "name": "McDonald's", 
-        "image": "https://i.imgur.com/su4iB3p.png"
+        "name": "Suco Lata", 
+        "image": "https://imgur.com/GxkSHvl.jpg",
+        "price": 8.5
       },
       { 
         "id": "3", 
-        "name": "Outback", 
-        "image": "https://i.imgur.com/jg3GJVN.png"
+        "name": "Refri 2 litros", 
+        "image": "https://imgur.com/MGoSsDv.jpg",
+        "price": 13
       },
       { 
         "id": "4", 
-        "name": "Sushi Dev", 
-        "image": "https://i.imgur.com/ffYWFBX.png"
+        "name": "Água", 
+        "image": "https://imgur.com/KavAcJC.jpg",
+        "price": 8.5
       },
       { 
         "id": "5", 
-        "name": "Burguer Grill", 
-        "image": "https://i.imgur.com/kmQvG2T.png"
+        "name": "Refri 1 litro", 
+        "image": "https://imgur.com/DyFQBhC.jpg",
+        "price": 10.9
       },
       { 
         "id": "6", 
-        "name": "Marmitas express", 
-        "image": "https://i.imgur.com/uXRuDFD.png"
+        "name": "Açai 300ml", 
+        "image": "https://i.imgur.com/BaUUCkc.png",
+        "price": 17.8
       }
     ],
     "foods": [
       { 
         "id": "1", 
-        "name": "Frango assado", 
+        "name": "Feijoada", 
         "price": 39.90,
         "time": "50-60 min",
         "delivery": 5.99,
         "rating": 4.8,
-        "image": "https://i.imgur.com/CEVUdju.png",
-        "restaurantId": "1"
+        "image": "https://i.imgur.com/b2jGteI.png",
+        "day": "Segunda-Feira"
   
       },
       { 
         "id": "2", 
-        "name": "Marmita fit", 
+        "name": "Salada e File de Tilápia", 
         "price": 29,
         "time": "30-40 min",
         "delivery": 2.99,
         "rating": 4.9,
-        "image": "https://i.imgur.com/uXRuDFD.png",
-        "restaurantId": "6"
+        "image": "https://imgur.com/a/ol9mPyW.jpg",
+         "day": "Terça-Feira"
       },
       { 
         "id": "3", 
-        "name": "Burguer Dev", 
+        "name": "Bife de boi e fritas", 
         "price": 40,
         "time": "50-60 min",
         "delivery": 5.99,
         "rating": 4.5,
-        "image": "https://i.imgur.com/O5c3lyU.png",
-        "restaurantId": "5"
+        "image": "https://imgur.com/xslBqnn.jpg",
+         "day": "Quarta-Feira"
       },
       { 
         "id": "4", 
-        "name": "Picanha Grill", 
+        "name": "Estrogonofe", 
         "price": 36,
         "time": "50-60 min",
         "delivery": 5.99,
         "rating": 4.4,
-        "image": "https://i.imgur.com/0UjG3wk.png",
-        "restaurantId": "3"
+        "image": "https://imgur.com/EYHuhdD.jpg",
+        "day": "Quinta-Feira"
       },
       { 
         "id": "5", 
-        "name": "Açai 300ml", 
+        "name": "Tropeiro", 
         "price": 20,
         "time": "20-30 min",
         "delivery": 2.99,
         "rating": 4.4,
-        "image": "https://i.imgur.com/BaUUCkc.png",
-        "restaurantId": "3"
+        "image": "https://imgur.com/56GwVez.jpg",
+        "day": "Sexta-Feira"
       }
     ]
   }

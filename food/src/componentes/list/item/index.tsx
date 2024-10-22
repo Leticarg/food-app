@@ -1,4 +1,4 @@
-import { View, Text} from 'react-native';
+import { View} from 'react-native';
 import { useState, useEffect } from 'react'
 import { RestaurantItem } from '..'
 
@@ -6,6 +6,7 @@ export interface RestaurantsProps{
   id: string;
   name: string;
   image: string;
+  price: number
 }
 
 export function RestaurantVerticalList() {
@@ -13,7 +14,7 @@ export function RestaurantVerticalList() {
 
   useEffect(() => {
     async function getFoods(){
-      const response = await fetch("http://192.168.0.12:3000/restaurants")
+      const response = await fetch("http://192.168.0.106:3000/restaurants")
       const data = await response.json()
       setRestaurants(data);
     }

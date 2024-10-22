@@ -13,7 +13,6 @@ let data = {
     { id: "3", name: "Estrogonofe", image: "https://imgur.com/EYHuhdD.png"},
     { id: "4", name: "Tropeiro", image: "https://imgur.com/56GwVez.png"},
     { id: "5", name: "Macarrao Abolonhesa", image: "https://imgur.com/9C9qJvz.png"},
-    { id: "6", name: "Feijoada", image: "https://imgur.com/b2jGteI.png"},
   ],
   
   foods: [
@@ -22,7 +21,6 @@ let data = {
     { id: "3", name: "Estrogonofe", image: "https://imgur.com/EYHuhdD.png", price: 40, restaurantId: "5" },
     { id: "4", name: "Tropeiro", image: "https://imgur.com/56GwVez.png", price: 36, restaurantId: "3" },
     { id: "5", name: "Macarrao Abolonhesa", image: "https://imgur.com/9C9qJvz.png", price: 20, restaurantId: "3" },
-    { id: "6", name: "Feijoada", image: "https://imgur.com/b2jGteI.png", price: 20, restaurantId: "3" },
   ]
 };
 
