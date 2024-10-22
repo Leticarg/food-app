@@ -1,4 +1,4 @@
-import {  View, ScrollView, TextInput, Button, StyleSheet } from "react-native";
+import {  View, TextInput, Button, StyleSheet, FlatList } from "react-native";
 import Constants from 'expo-constants';
 import React, { useState } from 'react';
 import { Header } from "../componentes/header";
@@ -6,7 +6,6 @@ import { Search } from "../componentes/search";
 import { Section } from '../componentes/section';
 import { TrendingFoods } from "../componentes/trending";
 import { Restaurants } from "../componentes/restaurants";
-import { RestaurantVerticalList } from '../componentes/list/item';
 import { CarrinhoVisual } from "../componentes/carrinho/carrinhovisual";
 import { CarrinhoProvider, useCarrinho } from '../componentes/carrinho';
 
@@ -17,7 +16,6 @@ function HomeScreen() {
   const [address, setAddress] = useState('Rua Wilson Gonçaves, 164 ');
   const [paymentMethod, setPaymentMethod] = useState('Cartão de Crédito, debito, Pix ou Dinheiro');
 
-  // Função que lida com a seleção de um item da busca
   const handleSearchSelect = (item: { id: string; name: string }) => {
     console.log('Selected item:', item);
     adicionarAoCarrinho({ 
@@ -31,54 +29,45 @@ function HomeScreen() {
 
   return (
     <>
-      <ScrollView
-        style={{ flex: 1 }}
-        className="bg-slate-200"
-        showsVerticalScrollIndicator={false}
-      >
-        <View className="w-full px-4" style={{ marginTop: statusBarHeight + 8 }}>
-          <Header />
-          {/* Passa a função handleSearchSelect para o componente Search */}
-          <Search onSelect={handleSearchSelect} /> 
+      <FlatList
+      data={null} 
+      ListHeaderComponent={(
+        <View>
+          <View className="w-full px-4" style={{ marginTop: statusBarHeight + 8 }}>
+            <Header />
+            <Search onSelect={handleSearchSelect} />
+          </View>
+
+          <Section name="Cardápio da Semana" size="text-2xl" />
+          <TrendingFoods />
+
+          <Section name="Bebidas" size="text-2xl" />
+          <Restaurants />
+
+          <View style={styles.inputContainer}>
+            <TextInput
+              style={styles.input}
+              placeholder="Endereço de entrega"
+              value={address}
+              onChangeText={setAddress}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Forma de pagamento"
+              value={paymentMethod}
+              onChangeText={setPaymentMethod}
+            />
+          </View>
+
+          <Button title="Finalizar Pedido" onPress={() => {
+            console.log('Endereço:', address);
+            console.log('Forma de Pagamento:', paymentMethod);
+          }} />
         </View>
-
-        <Section
-          name="Cardápio da Semana"
-          size="text-2xl"
-        />
-        <TrendingFoods />
-
-        <Section
-          name="Bebidas"
-          size="text-2xl"
-        />
-        <Restaurants />
-
-        <RestaurantVerticalList />
-
-        {/* Inputs para Endereço e Forma de Pagamento */}
-        <View style={styles.inputContainer}>
-          <TextInput
-            style={styles.input}
-            placeholder="Endereço de entrega"
-            value={address}
-            onChangeText={setAddress}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Forma de pagamento"
-            value={paymentMethod}
-            onChangeText={setPaymentMethod}
-          />
-        </View>
-
-        <Button title="Finalizar Pedido" onPress={() => {
-          // Aqui você pode chamar a função para finalizar o pedido
-          console.log('Endereço:', address);
-          console.log('Forma de Pagamento:', paymentMethod);
-          // Adicione lógica para enviar o pedido, se necessário
-        }} />
-      </ScrollView>
+      )}
+      renderItem={null}
+      keyExtractor={(item, index) => index.toString()}
+    />
 
       <CarrinhoVisual address={address} paymentMethod={paymentMethod} />
     </>

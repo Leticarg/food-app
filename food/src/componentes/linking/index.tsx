@@ -3,7 +3,7 @@ import { Linking } from 'react-native';
 export function sendOrderToWhatsApp(orderDetails: string) {
 
   const message = encodeURIComponent(orderDetails);
-  const phone = '+5531985396148'; // Substitua pelo número de telefone desejado
+  const phone = '+5531985396148'; 
   const url = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
 
   Linking.openURL(url).catch(err => {

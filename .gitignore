@@ -128,5 +128,10 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+#food-api files ignore
+food-api/dev.sqlite3
 food-api/package-lock.json
+
+#food files ignore
 food/package-lock.json

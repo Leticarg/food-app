@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
-// Tipagem para o item e a função onSelect
 interface SelectItemProps {
   item: {
     id: string;

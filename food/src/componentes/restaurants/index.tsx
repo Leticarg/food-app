@@ -1,10 +1,10 @@
 import { FlatList, Button, View } from 'react-native';
 import { useEffect, useState } from 'react';
 import { RestaurantItem } from './horizontal';
-import { useCarrinho } from '../carrinho'; // Importar o contexto do Carrinho
+import { useCarrinho } from '../carrinho';
 
 export interface RestaurantsProps {
-  id: string;
+  restaurantId: string;
   name: string;
   image: string;
   price: number
@@ -12,11 +12,11 @@ export interface RestaurantsProps {
 
 export function Restaurants() {
   const [restaurants, setRestaurants] = useState<RestaurantsProps[]>([]);
-  const { adicionarAoCarrinho } = useCarrinho(); // Acessar a função de adicionar ao carrinho
+  const { adicionarAoCarrinho } = useCarrinho(); 
 
   useEffect(() => {
     async function getRestaurants() {
-      const response = await fetch("http://192.168.2.106:3000/restaurants");
+      const response = await fetch("http://192.168.2.106:3005/api/v1/restaurants");
       const data = await response.json();
       setRestaurants(data);
     }
@@ -24,10 +24,9 @@ export function Restaurants() {
     getRestaurants();
   }, []);
 
-  // Função para adicionar restaurante ao carrinho
   const handleAddToCart = (item: RestaurantsProps) => {
     adicionarAoCarrinho({
-      id: parseInt(item.id), // Converta para número se necessário
+      id: parseInt(item.restaurantId), 
       nome: item.name,
       preco: item.price,
       dia: '',
@@ -43,7 +42,7 @@ export function Restaurants() {
           <RestaurantItem item={item} />
           <Button
             title="Adicionar ao Carrinho"
-            onPress={() => handleAddToCart(item)} // Adicionar ao carrinho ao clicar
+            onPress={() => handleAddToCart(item)} 
           />
         </View>
       )}

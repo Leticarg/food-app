@@ -13,7 +13,6 @@ export function CardHorizontalFood({ food }: { food: FoodProps }) {
     
     <View className='flex flex-row bg-neutral-900/90 gap-1 rounded-full absolute top-2 right-3 px-2 py-1 items-center justify-center'>
       <Ionicons name="star" size={14} color="#ca8a04"/>
-      <Text className='text-white text-sm'>{food.rating}</Text>
     </View>
 
     <Text className='text-black font-medium text-lg'>{food.day}</Text>

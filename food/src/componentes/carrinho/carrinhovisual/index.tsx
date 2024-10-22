@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, FlatList, Button, StyleSheet } from 'react-native';
-import { useCarrinho } from '..'; // Ajuste o caminho se necessário
+import { useCarrinho } from '..'; 
 
 
 interface CarrinhoVisualProps {
@@ -9,13 +9,13 @@ interface CarrinhoVisualProps {
 }
 
 export function CarrinhoVisual({ address, paymentMethod }: CarrinhoVisualProps) {
-  const { carrinho, removerDoCarrinho } = useCarrinho(); // Acessar o contexto do carrinho
+  const { carrinho, removerDoCarrinho } = useCarrinho();
 
   const handleFinalizeOrder = () => {
-    // Lógica para finalizar o pedido e enviar via WhatsApp
+    
     console.log('Endereço:', address);
     console.log('Forma de Pagamento:', paymentMethod);
-    // Chame a função de envio do WhatsApp aqui
+    
   };
 
   return (
@@ -29,27 +29,26 @@ export function CarrinhoVisual({ address, paymentMethod }: CarrinhoVisualProps) 
             data={carrinho}
             renderItem={({ item }) => (
               <View style={styles.itemContainer}>
-                {/* Nome e preço do item */}
+
                 <View style={styles.itemInfo}>
                   <Text style={styles.itemNome}>{item.nome} (x{item.quantidade})</Text>
                   <Text style={styles.itemPreco}>R$ {item.preco.toFixed(2)}</Text>
                 </View>
 
-                {/* Botão de remover */}
                 <Button
                   title="Remover"
                   onPress={() => removerDoCarrinho(item.id)}
-                  color="#e74c3c" // Cor personalizada para o botão
+                  color="#e74c3c" 
                 />
               </View>
             )}
             keyExtractor={(item) => item.id.toString()}
           />
-          {/* Exibir Endereço e Forma de Pagamento */}
+
           <Text style={styles.endereco}>Endereço: {address}</Text>
           <Text style={styles.endereco}>Forma de Pagamento: {paymentMethod}</Text>
           
-          {/* Botão para finalizar o pedido */}
+
           <Button title="Finalizar Pedido" onPress={handleFinalizeOrder} />
         </>
       )}

@@ -7,13 +7,6 @@ export function RestaurantItem({ item }: { item: RestaurantsProps }) {
      className='flex flex-col rounded-xl relative'
      onPress={() => console.log("CLICOU NO RESTAURANTE " + item.name)}
      >
-     <Image
-       source={{ uri: item.image}}
-       className="w-50 h-36 rounded-xl"
-       />
-     
-     <Text className='text-black mt-1'>{item.name}</Text>
-     <Text className='text-green-700 font-medium text-lg'>R$ {item.price}</Text>
     </Pressable>
    );
  }
