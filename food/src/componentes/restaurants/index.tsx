@@ -1,7 +1,7 @@
 import { FlatList, Button, View } from 'react-native';
 import { useEffect, useState } from 'react';
 import { RestaurantItem } from './horizontal';
-import { useCarrinho } from '../carrinho';
+import { useCarrinho } from '../carrinho'; // Importar o contexto do Carrinho
 
 export interface RestaurantsProps {
   restaurantId: string;

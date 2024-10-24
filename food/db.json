@@ -1,0 +1,93 @@
+{
+    "restaurants": [
+      { 
+        "id": "1", 
+        "name": "Coca Lata", 
+        "image": "https://imgur.com/vdKmBs7.jpgs",
+        "price": 8.5
+      },
+      { 
+        "id": "2", 
+        "name": "Suco Lata", 
+        "image": "https://imgur.com/GxkSHvl.jpg",
+        "price": 8.5
+      },
+      { 
+        "id": "3", 
+        "name": "Refri 2 litros", 
+        "image": "https://imgur.com/MGoSsDv.jpg",
+        "price": 13
+      },
+      { 
+        "id": "4", 
+        "name": "Água", 
+        "image": "https://imgur.com/KavAcJC.jpg",
+        "price": 8.5
+      },
+      { 
+        "id": "5", 
+        "name": "Refri 1 litro", 
+        "image": "https://imgur.com/DyFQBhC.jpg",
+        "price": 10.9
+      },
+      { 
+        "id": "6", 
+        "name": "Açai 300ml", 
+        "image": "https://i.imgur.com/BaUUCkc.png",
+        "price": 17.8
+      }
+    ],
+    "foods": [
+      { 
+        "id": "1", 
+        "name": "Feijoada", 
+        "price": 39.90,
+        "time": "50-60 min",
+        "delivery": 5.99,
+        "rating": 4.8,
+        "image": "https://i.imgur.com/b2jGteI.png",
+        "day": "Segunda-Feira"
+  
+      },
+      { 
+        "id": "2", 
+        "name": "Salada e File de Tilápia", 
+        "price": 29,
+        "time": "30-40 min",
+        "delivery": 2.99,
+        "rating": 4.9,
+        "image": "https://imgur.com/9C9qJvz.jpg", 
+         "day": "Terça-Feira"
+      },
+      { 
+        "id": "3", 
+        "name": "Bife de boi e fritas", 
+        "price": 40,
+        "time": "50-60 min",
+        "delivery": 5.99,
+        "rating": 4.5,
+        "image": "https://imgur.com/xslBqnn.jpg",
+         "day": "Quarta-Feira"
+      },
+      { 
+        "id": "4", 
+        "name": "Estrogonofe", 
+        "price": 36,
+        "time": "50-60 min",
+        "delivery": 5.99,
+        "rating": 4.4,
+        "image": "https://imgur.com/EYHuhdD.jpg",
+        "day": "Quinta-Feira"
+      },
+      { 
+        "id": "5", 
+        "name": "Tropeiro", 
+        "price": 20,
+        "time": "20-30 min",
+        "delivery": 2.99,
+        "rating": 4.4,
+        "image": "https://imgur.com/56GwVez.jpg",
+        "day": "Sexta-Feira"
+      }
+    ]
+  }

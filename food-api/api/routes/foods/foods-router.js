@@ -27,18 +27,15 @@ apiFoodsRouter.post(endpoint, function(req, res) {
 });
 
 apiFoodsRouter.post(endpoint + "create-list", function(req, res) {
-    let foodsBody = req.body.foods; // Acessa o array 'foods' do body
+    let foodsBody = req.body.foods; 
 
-    // Verifica se o body contém o array 'restaurants'
     if (!foodsBody || !Array.isArray(foodsBody)) {
         return res.status(400).json({ message: 'Body inválido. Esperado um array de foods.' });
     }
 
-    // Usa o knex para inserir cada restaurante
     knex('foods')
-        .insert(foodsBody, ['foodId']) // Insere todos os restaurantes e retorna os IDs
+        .insert(foodsBody, ['foodId']) 
         .then(foods => {
-            // Retorna os IDs dos restaurantes inseridos
             let ids = foods.map(r => r.foodId);
             res.status(201).json({ message: 'foods inseridos com sucesso.', ids });
         })
@@ -55,5 +52,12 @@ apiFoodsRouter.put(endpoint + ':foodId', function (req, res) {
     })
     .catch(err => res.status(500).json({message: `Erro ao inserir food: ${err.message}`}))
   });
+
+apiFoodsRouter.delete(endpoint + ':foodId', function (req, res) {
+    knex('foods').where('foodId', req.params.foodId)
+  .del().then(() =>{ res.status(204).json(`Food excluido com sucesso`);})
+  .catch(err => res.status(500).json({message: `Erro ao excluir food: ${err.message}`}));
+});
+
 
 module.exports = apiFoodsRouter;

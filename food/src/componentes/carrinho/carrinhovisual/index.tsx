@@ -1,21 +1,22 @@
 import React from 'react';
-import { View, Text, FlatList, Button, StyleSheet } from 'react-native';
+import { View, Text, FlatList, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import { useCarrinho } from '..'; 
 
 
 interface CarrinhoVisualProps {
   address: string;
   paymentMethod: string;
+  onAddressClick: () => void;
+  onPaymentClick: () => void; 
 }
 
-export function CarrinhoVisual({ address, paymentMethod }: CarrinhoVisualProps) {
+export function CarrinhoVisual({ address, paymentMethod, onAddressClick, onPaymentClick }: CarrinhoVisualProps) {
   const { carrinho, removerDoCarrinho } = useCarrinho();
 
   const handleFinalizeOrder = () => {
-    
     console.log('Endereço:', address);
     console.log('Forma de Pagamento:', paymentMethod);
-    
+   
   };
 
   return (
@@ -29,12 +30,10 @@ export function CarrinhoVisual({ address, paymentMethod }: CarrinhoVisualProps) 
             data={carrinho}
             renderItem={({ item }) => (
               <View style={styles.itemContainer}>
-
                 <View style={styles.itemInfo}>
                   <Text style={styles.itemNome}>{item.nome} (x{item.quantidade})</Text>
                   <Text style={styles.itemPreco}>R$ {item.preco.toFixed(2)}</Text>
                 </View>
-
                 <Button
                   title="Remover"
                   onPress={() => removerDoCarrinho(item.id)}
@@ -45,9 +44,12 @@ export function CarrinhoVisual({ address, paymentMethod }: CarrinhoVisualProps) 
             keyExtractor={(item) => item.id.toString()}
           />
 
-          <Text style={styles.endereco}>Endereço: {address}</Text>
-          <Text style={styles.endereco}>Forma de Pagamento: {paymentMethod}</Text>
-          
+          <TouchableOpacity onPress={onAddressClick}>
+            <Text style={styles.endereco}>Endereço: {address}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={onPaymentClick}>
+            <Text style={styles.endereco}>Forma de Pagamento: {paymentMethod}</Text>
+          </TouchableOpacity>
 
           <Button title="Finalizar Pedido" onPress={handleFinalizeOrder} />
         </>
@@ -55,7 +57,6 @@ export function CarrinhoVisual({ address, paymentMethod }: CarrinhoVisualProps) 
     </View>
   );
 }
-
 
 const styles = StyleSheet.create({
   carrinhoContainer: {
@@ -106,17 +107,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#666',
   },
-  input: {
-    height: 40,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    marginBottom: 10,
-  },
   endereco: {
     fontSize: 14,
     marginTop: 10,
     color: '#333',
+    textDecorationLine: 'underline', 
   },
 });

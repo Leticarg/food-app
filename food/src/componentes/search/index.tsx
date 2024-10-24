@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
 import { View, TextInput, FlatList } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-import { SelectItem } from './select';
+import { SelectItem } from './select'; 
 
 const options = [
-  { id: '1', name: 'Frango assado' },
-  { id: '2', name: 'Marmita fit' },
-  { id: '3', name: 'Burguer Dev' },
-  { id: '4', name: 'Picanha Grill' },
-  { id: '5', name: 'Açai 300ml' },
-
+  { id: '1', name: 'Feijoada' },
+  { id: '2', name: 'Macarrão à Bolonhesa' },
+  { id: '3', name: 'Bife de boi e fritas' },
+  { id: '4', name: 'Estrogonofe' },
+  { id: '5', name: 'Tropeiro' },
 ];
 
-
 interface SearchProps {
-  onSelect: (item: { id: string; name: string }) => void;
+  onSelect: (item: { id: string; name: string }) => void; 
 }
 
 export function Search({ onSelect }: SearchProps) {
@@ -32,7 +30,7 @@ export function Search({ onSelect }: SearchProps) {
           placeholder="Procure sua comida..."
           className='w-full h-full flex-1 bg-transparent'
           value={searchQuery}
-          onChangeText={text => setSearchQuery(text)}
+          onChangeText={text => setSearchQuery(text)} 
         />
       </View>
 

@@ -52,7 +52,7 @@ export function TrendingFoods() {
         </View>
       )}
       horizontal={false}
-      contentContainerStyle={{ gap: 14, paddingLeft: 16, paddingRight: 16 }}
+      contentContainerStyle={{ gap: 8, paddingLeft: 8, paddingRight: 16 }}
       showsHorizontalScrollIndicator={true}
     />
   );

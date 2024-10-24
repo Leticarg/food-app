@@ -3,10 +3,9 @@ import { Text, TouchableOpacity } from 'react-native';
 
 interface SelectItemProps {
   item: {
-    id: string;
     name: string;
   };
-  onSelect: (item: { id: string; name: string }) => void;
+  onSelect: (item: { name: string }) => void;
 }
 
 export function SelectItem({ item, onSelect }: SelectItemProps) {

@@ -20,7 +20,14 @@ exports.up = function(knex) {
         table.integer('delivery');
         table.string('image', 100);
         table.string('day');
-      });
+      })
+      .createTable('orders', table => {
+        table.increments('orderId');
+        table.integer('restaurantId').notNullable().references('restaurantId').inTable('restaurants');
+        table.text('foods').notNullable(); 
+        table.integer('deliveryTime').notNullable();
+        table.timestamp('created_at').defaultTo(knex.fn.now());
+    });
 };
 
 /**
@@ -29,6 +36,7 @@ exports.up = function(knex) {
  */
 exports.down = function(knex) {
     return knex.schema
+    .dropTableIfExists('orders')
     .dropTableIfExists('restaurants')
     .dropTableIfExists('foods');
 };

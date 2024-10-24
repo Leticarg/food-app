@@ -1,4 +1,4 @@
-import { Pressable, Text, Image } from 'react-native';
+import { Pressable } from 'react-native';
 import { RestaurantsProps } from '../restaurants'
 
 export function RestaurantItem({ item }: { item: RestaurantsProps }) {
